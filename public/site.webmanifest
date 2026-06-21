@@ -1,0 +1,16 @@
+{
+  "name": "Conect Play - IPTV Premium",
+  "short_name": "Conect Play",
+  "description": "IPTV premium com canais ao vivo, futebol, filmes e séries.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0D12",
+  "theme_color": "#0B0D12",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
