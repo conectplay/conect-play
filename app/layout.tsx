@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 import { SITE } from "@/lib/site";
 import "./globals.css";
+import Script from "next/script";
 
 const display = Playfair_Display({
   subsets: ["latin"],
@@ -181,6 +182,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
         />
+        <Script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=AW-18248552526"
+/>
+
+<Script id="google-ads">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18248552526');
+  `}
+</Script>
       </head>
       <body className="font-sans">
         <Header />
