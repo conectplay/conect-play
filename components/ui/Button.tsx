@@ -1,7 +1,14 @@
-// components/ui/Button.tsx
+"use client";
+
 import Link from "next/link";
 import { ReactNode } from "react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 type ButtonProps = {
   href: string;
@@ -41,13 +48,25 @@ export function Button({
   ariaLabel,
 }: ButtonProps) {
   const isWhatsApp = href.includes("wa.me");
+
+  const handleClick = () => {
+    if (isWhatsApp) {
+      window.gtag?.("event", "conversion", {
+        send_to: "AW-18248552526/rVTjCPHI4cUcEM6gy_1D",
+        value: 1.0,
+        currency: "BRL",
+      });
+    }
+  };
+
   return (
     <Link
       href={href}
       target={isWhatsApp ? "_blank" : undefined}
       rel={isWhatsApp ? "noopener noreferrer" : undefined}
       aria-label={ariaLabel}
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+      onClick={handleClick}
+      className={${base} ${variants[variant]} ${sizes[size]} ${className}}
     >
       {icon && isWhatsApp && (
         <WhatsAppIcon className="h-[18px] w-[18px] shrink-0" />
