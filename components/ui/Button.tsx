@@ -23,12 +23,9 @@ const base =
   "group inline-flex items-center justify-center gap-2.5 font-semibold tracking-tight transition-all duration-300 ease-out focus-visible:outline-none active:scale-[0.98] whitespace-nowrap";
 
 const variants: Record<string, string> = {
-  primary:
-    "bg-green-500 hover:bg-green-600 text-white shadow-lg",
-  secondary:
-    "bg-yellow-400 hover:bg-yellow-300 text-black",
-  outline:
-    "border border-white/20 text-white hover:bg-white/10",
+  primary: "bg-green-500 hover:bg-green-600 text-white shadow-lg",
+  secondary: "bg-yellow-400 hover:bg-yellow-300 text-black",
+  outline: "border border-white/20 text-white hover:bg-white/10",
   ghost: "text-white/70 hover:text-white",
 };
 
