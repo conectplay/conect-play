@@ -16,14 +16,14 @@ type ButtonProps = {
 const base =
   "group inline-flex items-center justify-center gap-2.5 font-semibold tracking-tight transition-all duration-300 ease-out focus-visible:outline-none active:scale-[0.98] whitespace-nowrap";
 
-const variants: Record<string, string> = {
+const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
   primary: "bg-green-500 hover:bg-green-600 text-white shadow-lg",
   secondary: "bg-yellow-400 hover:bg-yellow-300 text-black",
   outline: "border border-white/20 text-white hover:bg-white/10",
   ghost: "text-white/70 hover:text-white",
 };
 
-const sizes: Record<string, string> = {
+const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {
   md: "h-12 px-6 rounded-xl text-[15px]",
   lg: "h-14 px-8 rounded-2xl text-base",
 };
@@ -58,7 +58,7 @@ export function Button({
       target={isWhatsApp ? "_blank" : undefined}
       rel={isWhatsApp ? "noopener noreferrer" : undefined}
       aria-label={ariaLabel}
-      className={${base} ${variants[variant]} ${sizes[size]} ${className}}
+      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {icon && isWhatsApp && <WhatsAppIcon />}
       {children}
